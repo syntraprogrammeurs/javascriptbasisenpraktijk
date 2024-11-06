@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Namen Toevoegen en Sorteren met JavaScript</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+	<h1 class="text-center mb-4">Namen Toevoegen en Sorteren met JavaScript</h1>
+	
+	<!-- Terug naar home knop onder de titel -->
+	<div class="text-center my-5">
+		<a href="../../index.html" class="btn btn-outline-primary btn-lg">
+			<i class="bi bi-house-door"></i> Terug naar Home
+		</a>
+	</div>
+	
+	<!-- Omschrijving van de oefening in een card -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Namen Invoeren en Sorteren
+		</div>
+		<div class="card-body">
+			<p>In deze oefening voer je een aantal namen in, die worden opgeslagen in een array. Vervolgens worden de namen gesorteerd in alfabetische volgorde en in omgekeerde volgorde.</p>
+			<p><strong>Voer de volgende code uit in je console:</strong></p>
+			<pre><code>let aantalNamen = parseInt(prompt("Hoeveel namen wil je ingeven?"));
+let namen = [];
+for (let i = 1; i <= aantalNamen; i++) {
+    let mijnNaam = prompt(`Geef naam ${i} in`);
+    namen.push(mijnNaam);
+}
+console.log(namen);
+console.log(namen.sort());
+console.log(namen.sort().reverse());</code></pre>
+			<p class="text-info"><strong>Tip:</strong> Open de console in je browser en voer het aantal namen in, gevolgd door de namen zelf. De array zal de namen weergeven in alfabetische en omgekeerde volgorde.</p>
+		</div>
+	</div>
+	
+	<!-- Uitleg van de stappen -->
+	<div class="alert alert-secondary mt-4" role="alert">
+		<h4 class="alert-heading">Hoe werkt deze oefening?</h4>
+		<ol>
+			<li><strong>Stap 1:</strong> Vraag aan de gebruiker hoeveel namen hij wil invoeren.</li>
+			<li><strong>Stap 2:</strong> Voeg elke ingevoerde naam toe aan de array met de <code>push()</code> methode.</li>
+			<li><strong>Stap 3:</strong> Toon de array in de console om de ingevoerde namen te bekijken.</li>
+			<li><strong>Stap 4:</strong> Sorteer de namen in alfabetische volgorde met <code>sort()</code> en toon het resultaat.</li>
+			<li><strong>Stap 5:</strong> Sorteer de namen in omgekeerde volgorde met <code>sort().reverse()</code> en toon het resultaat.</li>
+		</ol>
+		<hr>
+		<p class="mb-0">Druk op <kbd>F12</kbd> of gebruik <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac) om de console te openen en de uitkomst van elke stap te zien.</p>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

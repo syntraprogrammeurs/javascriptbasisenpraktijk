@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Array Methodes in Actie</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+	<h1 class="text-center mb-4">JavaScript Array Methodes in Actie</h1>
+	
+	<!-- Terug naar home knop onder de titel -->
+	<div class="text-center my-5">
+		<a href="../../index.html" class="btn btn-outline-primary btn-lg">
+			<i class="bi bi-house-door"></i> Terug naar Home
+		</a>
+	</div>
+	
+	<!-- Omschrijving van de oefening in een card -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Array Methodes Demonstratie
+		</div>
+		<div class="card-body">
+			<p>In deze oefening leer je hoe je verschillende array-methoden in JavaScript kunt gebruiken om arrays te manipuleren en te bewerken. Hieronder volgt een uitleg van elke methode:</p>
+			
+			<h5><code>push()</code> Methode</h5>
+			<p>De <code>push()</code> methode voegt een of meer elementen toe aan het einde van een array en retourneert de nieuwe lengte van de array.</p>
+			
+			<h5><code>pop()</code> Methode</h5>
+			<p>De <code>pop()</code> methode verwijdert het laatste element uit een array en retourneert dat element.</p>
+			
+			<h5><code>shift()</code> Methode</h5>
+			<p>De <code>shift()</code> methode verwijdert het eerste element uit een array en retourneert dat element. De resterende elementen verschuiven een index naar links.</p>
+			
+			<h5><code>unshift()</code> Methode</h5>
+			<p>De <code>unshift()</code> methode voegt een of meer elementen aan het begin van een array toe en retourneert de nieuwe lengte van de array.</p>
+			
+			<h5><code>forEach()</code> Methode</h5>
+			<p>De <code>forEach()</code> methode voert een opgegeven functie uit voor elk element in de array, maar retourneert geen nieuwe array. Hier wordt elke naam in de array <code>namen</code> gelogd naar de console.</p>
+			
+			<h5><code>map()</code> Methode</h5>
+			<p>De <code>map()</code> methode maakt een nieuwe array door een opgegeven functie uit te voeren op elk element in de array. In dit geval wordt elk getal verdubbeld.</p>
+			
+			<h5><code>filter()</code> Methode</h5>
+			<p>De <code>filter()</code> methode maakt een nieuwe array met alle elementen die voldoen aan de opgegeven conditie. Hier worden alleen even getallen gefilterd uit de array.</p>
+			
+			<h5><code>find()</code> Methode</h5>
+			<p>De <code>find()</code> methode retourneert het eerste element in de array dat voldoet aan de opgegeven conditie. In dit geval zoekt het naar het eerste getal dat groter is dan 2.</p>
+			
+			<h5><code>findIndex()</code> Methode</h5>
+			<p>De <code>findIndex()</code> methode retourneert de index van het eerste element dat voldoet aan de opgegeven conditie. Hier is het de index van het eerste getal dat groter is dan 2.</p>
+			
+			<h5><code>slice()</code> Methode</h5>
+			<p>De <code>slice()</code> methode maakt een nieuwe array met een gedeelte van de originele array. In dit geval worden de elementen van index 3 tot 6 uit de array gehaald.</p>
+			
+			<h5><code>splice()</code> Methode</h5>
+			<p>De <code>splice()</code> methode wijzigt de inhoud van een array door elementen te verwijderen of toe te voegen. Hier wordt een element op index 3 vervangen door "druiven".</p>
+			
+			<h5><code>reduce()</code> Methode</h5>
+			<p>De <code>reduce()</code> methode voert een reducer-functie uit op elk element in de array om uiteindelijk een enkel resultaat te verkrijgen. Hier wordt de som van alle getallen in de array berekend door ze te vermenigvuldigen.</p>
+			
+			<h5>Code Voorbeeld</h5>
+			<p><strong>Voer de volgende code uit in je console om de uitvoer van elke methode te zien:</strong></p>
+			<pre><code>let namen = ["Jan", "Piet", "Klaas"];
+
+console.log(namen[1]);
+console.log(namen.push("Fabio"));
+console.log(namen[3]);
+console.log(namen);
+console.log(namen.push("Tom"));
+console.log(namen);
+console.log(namen.pop());
+console.log(namen);
+console.log(namen.shift());
+console.log(namen);
+console.log(namen.unshift("Jonas", "Dieter"));
+console.log(namen);
+console.log(namen.length);
+
+namen.forEach(mijnNaam => console.log(mijnNaam));
+
+let getallen = [1, 2, 3];
+let verdubbeld = getallen.map(getal => getal * 2);
+console.log(verdubbeld);
+
+let numbers = [1, 2, 3, 4, 5];
+let evenGetallen = numbers.filter(getal => getal % 2 === 0);
+console.log(evenGetallen);
+
+let nieuwenummers = [1, 2, 3, 4];
+let eersteGroterDanTwee = nieuwenummers.find(getal => getal > 2);
+console.log(eersteGroterDanTwee);
+let index = nieuwenummers.findIndex(getal => getal > 2);
+console.log(index);
+
+let fruits = ["appel", "banaan", "peer", "kiwi", "kersen", "sinaasappel"];
+let sommigeFruits = fruits.slice(3, 6);
+console.log(sommigeFruits);
+
+let tvfruits = fruits.splice(3, 1, "druiven");
+console.log(tvfruits);
+console.log(fruits);
+
+let newnumbers = [1, 2, 3, 4];
+let som = newnumbers.reduce((acc, num) => acc * num, 1);
+console.log(som);</code></pre>
+		</div>
+	</div>
+	
+	<!-- Extra informatie over de array-methoden en console.log -->
+	<div class="alert alert-warning mt-4" role="alert">
+		<h4 class="alert-heading">Hoe werkt deze oefening?</h4>
+		<p>Deze code gebruikt verschillende JavaScript array-methoden om de mogelijkheden van array-manipulatie te demonstreren. Bekijk hoe elke methode werkt door het resultaat in de console te volgen.</p>
+		<hr>
+		<p class="mb-0">Druk op <kbd>F12</kbd> of gebruik <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac) om de console te openen en de uitkomst van elke methode te zien.</p>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

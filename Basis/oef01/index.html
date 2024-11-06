@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Code Uitleg</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+	<h1 class="text-center mb-4">Lengte en Unicode Waarde Berekenen</h1>
+	<!-- Terug naar home knop -->
+	<div class="text-center my-5">
+		<a href="../../index.html" class="btn btn-outline-primary btn-lg">
+			<i class="bi bi-house-door"></i> Terug naar Home
+		</a>
+	</div>
+	
+	<!-- Eerste Code Voorbeeld -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Voorbeeld 1: Bepalen van de lengte van een string
+		</div>
+		<div class="card-body">
+			<p>In dit voorbeeld gebruiken we de <code>length</code> eigenschap om de lengte van het woord <strong>"pimperzele"</strong> te bepalen.</p>
+			<pre><code>let woord = "pimperzele";
+console.log(woord.length);</code></pre>
+			<p><strong>Uitleg:</strong> <code>woord.length</code> geeft het aantal karakters in de string <code>"pimperzele"</code> terug. De verwachte uitkomst is <strong>10</strong>, omdat het woord uit 10 letters bestaat.</p>
+			<p class="text-info"><strong>Tip:</strong> Open de console in je browser om de uitkomst te zien. Druk op <kbd>F12</kbd> of <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac) om de console te openen. Zoek naar het getal <strong>10</strong> in de console.</p>
+		</div>
+	</div>
+	
+	<!-- Tweede Code Voorbeeld -->
+	<div class="card mb-4">
+		<div class="card-header bg-success text-white">
+			Voorbeeld 2: Ophalen van de ASCII/Unicode-waarde van een karakter
+		</div>
+		<div class="card-body">
+			<p>In dit voorbeeld gebruiken we de <code>charCodeAt</code> methode om de Unicode-waarde van de letter <strong>"a"</strong> te vinden.</p>
+			<pre><code>let character = "a";
+console.log(character.charCodeAt(0));</code></pre>
+			<p><strong>Uitleg:</strong> <code>character.charCodeAt(0)</code> geeft de Unicode-waarde (ASCII-waarde) van het karakter op index 0 in de string <code>"a"</code>. De verwachte uitkomst is <strong>97</strong>, omdat de Unicode-waarde van de letter "a" 97 is.</p>
+			<p class="text-info"><strong>Tip:</strong> Open de console in je browser om de uitkomst te zien. Kijk in de console naar het getal <strong>97</strong> om te bevestigen dat de juiste waarde is weergegeven.</p>
+		</div>
+	</div>
+	
+	<!-- Extra Info over console.log -->
+	<div class="alert alert-warning mt-4" role="alert">
+		<h4 class="alert-heading">Gebruik van <code>console.log</code></h4>
+		<p>De <code>console.log</code> functie wordt gebruikt om informatie in de console weer te geven. Dit is handig voor het testen en debuggen van je code. In deze voorbeelden kun je de <code>console.log</code> gebruiken om de resultaten van de JavaScript-code te bekijken.</p>
+		<hr>
+		<p class="mb-0">Om de console te openen, druk op <kbd>F12</kbd> of gebruik de snelkoppeling <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac).</p>
+	</div>
+	
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

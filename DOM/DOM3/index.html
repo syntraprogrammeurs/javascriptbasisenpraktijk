@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Stijl Manipulatie</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- JavaScript bestand -->
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<div class="container my-5">
+	<h1 class="text-center mb-4">JavaScript Stijl Manipulatie</h1>
+	
+	<!-- Terug naar home knop onder de titel -->
+	<div class="text-center my-5">
+		<a href="../../index.html" class="btn btn-outline-primary btn-lg">
+			<i class="bi bi-house-door"></i> Terug naar Home
+		</a>
+	</div>
+	
+	<!-- Omschrijving van de oefening in een card -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Wijzigen van Inline CSS Stijlen
+		</div>
+		<div class="card-body">
+			<p>In deze oefening leer je hoe je met JavaScript inline CSS-stijlen kunt toepassen op HTML-elementen.</p>
+			<h5>Voorbeeldcode</h5>
+			<pre><code>// Selecteer het element met id "intro"
+let introElement = document.getElementById("intro");
+
+// Pas verschillende stijlen toe op het element
+introElement.style.color = "blue"; // Tekstkleur wordt blauw
+introElement.style.fontSize = "42px"; // Lettergrootte wordt 42px
+introElement.style.backgroundColor = "yellow"; // Achtergrondkleur wordt geel
+
+console.log(introElement); // Logt het element naar de console
+</code></pre>
+		</div>
+	</div>
+	
+	<!-- HTML element voor de oefening -->
+	<div id="intro" class="mb-3">Welkom!</div>
+	
+	<!-- Extra uitleg over de functionaliteit -->
+	<div class="alert alert-secondary mt-4" role="alert">
+		<h4 class="alert-heading">Hoe werkt deze oefening?</h4>
+		<ul>
+			<li><strong>Wijziging van tekstkleur:</strong> Met <code>introElement.style.color = "blue"</code> verandert de kleur van de tekst naar blauw.</li>
+			<li><strong>Wijziging van lettergrootte:</strong> Met <code>introElement.style.fontSize = "42px"</code> zetten we de lettergrootte op 42px.</li>
+			<li><strong>Wijziging van achtergrondkleur:</strong> Met <code>introElement.style.backgroundColor = "yellow"</code> veranderen we de achtergrondkleur naar geel.</li>
+		</ul>
+		<hr>
+		<p class="mb-0">Druk op <kbd>F12</kbd> of gebruik <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac) om de console te openen en de uitkomsten te volgen.</p>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

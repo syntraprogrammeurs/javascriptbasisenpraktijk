@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Element Selecties</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- JavaScript bestand -->
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<div class="container my-5">
+	<h1 class="text-center mb-4">JavaScript Element Selecties</h1>
+	
+	<!-- Terug naar home knop onder de titel -->
+	<div class="text-center my-5">
+		<a href="../../index.html" class="btn btn-outline-primary btn-lg">
+			<i class="bi bi-house-door"></i> Terug naar Home
+		</a>
+	</div>
+	
+	<!-- Omschrijving van de oefening in een card -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Selectie van Elementen met JavaScript
+		</div>
+		<div class="card-body">
+			<p>In deze oefening leer je hoe je verschillende HTML-elementen kunt selecteren met JavaScript en de inhoud ervan in de console kunt bekijken.</p>
+			<h5>Voorbeeldcode</h5>
+			<pre><code>// Selecteer het element met id "intro" en log de tekstinhoud
+let introElement = document.getElementById("intro");
+console.log(introElement.textContent);
+
+// Selecteer alle elementen met class "bericht" en log de tekst van het tweede element
+let berichten = document.getElementsByClassName("bericht");
+console.log(berichten[1].textContent);
+
+// Selecteer alle <p>-elementen en log de tekstinhoud van het eerste <p>-element
+let paragrafen = document.getElementsByTagName("p");
+console.log(paragrafen[0].textContent);
+
+// Selecteer het element met id "container" en log de tekst van het eerste kind
+let containerparagraaf = document.querySelector("#container");
+console.log(containerparagraaf.children[0].textContent);
+
+// Selecteer alle <li> elementen binnen een <ul> en log het aantal <li> elementen
+let items = document.querySelectorAll("ul li");
+console.log(items.length);
+</code></pre>
+		</div>
+	</div>
+	
+	<!-- HTML elementen voor de oefening -->
+	<div id="intro" class="mb-3">Welkom bij de pagina!</div>
+	
+	<div class="bericht">Bericht 1</div>
+	<div class="bericht">Bericht 2</div>
+	
+	<p>Dit is paragraaf 1.</p>
+	<p>Dit is paragraaf 2.</p>
+	
+	<div id="container" class="mt-4">
+		<p>Dit is een paragraaf binnen de container.</p>
+	</div>
+	
+	<ul class="mt-4">
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+	
+	<!-- Extra uitleg over de functionaliteit -->
+	<div class="alert alert-secondary mt-4" role="alert">
+		<h4 class="alert-heading">Hoe werkt deze oefening?</h4>
+		<ul>
+			<li><strong>Selectie op ID:</strong> Met <code>getElementById("intro")</code> selecteren we het element met de ID <code>intro</code> en loggen de tekstinhoud "Welkom bij de pagina!"</li>
+			<li><strong>Selectie op Class:</strong> Met <code>getElementsByClassName("bericht")</code> selecteren we alle elementen met de class <code>bericht</code> en loggen de tekst van het tweede element, "Bericht 2".</li>
+			<li><strong>Selectie op Tagnaam:</strong> Met <code>getElementsByTagName("p")</code> selecteren we alle <code>&lt;p&gt;</code> elementen en loggen de tekst van het eerste <code>&lt;p&gt;</code> element, "Dit is paragraaf 1."</li>
+			<li><strong>Selectie op Kinderen:</strong> Met <code>querySelector("#container")</code> selecteren we het element met ID <code>container</code> en loggen de tekst van het eerste kindelement, "Dit is een paragraaf binnen de container."</li>
+			<li><strong>Selectie van <code>&lt;li&gt;</code> elementen in een <code>&lt;ul&gt;</code>:</strong> Met <code>querySelectorAll("ul li")</code> selecteren we alle <code>&lt;li&gt;</code> elementen in een <code>&lt;ul&gt;</code> en loggen we het aantal elementen, wat hier 3 is.</li>
+		</ul>
+		<hr>
+		<p class="mb-0">Druk op <kbd>F12</kbd> of gebruik <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac) om de console te openen en de uitkomst van elke selectie te zien.</p>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

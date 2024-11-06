@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tel Woorden in een String met JavaScript</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+	<h1 class="text-center mb-4">Tel Woorden in een String met JavaScript</h1>
+	
+	<!-- Terug naar home knop onder de titel -->
+	<div class="text-center my-5">
+		<a href="../../index.html" class="btn btn-outline-primary btn-lg">
+			<i class="bi bi-house-door"></i> Terug naar Home
+		</a>
+	</div>
+	
+	<!-- Omschrijving van de oefening in een card -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Aantal Woorden Tellen
+		</div>
+		<div class="card-body">
+			<p>In deze oefening leer je hoe je met JavaScript het aantal woorden in een zin kunt tellen door gebruik te maken van de <code>split</code>-methode.</p>
+			<p><strong>Voer de volgende code uit in je console:</strong></p>
+			<pre><code>let mijnZin = "Dit is een zin";
+function telWoorden(zin) {
+    return zin.split(" ").length;
+}
+console.log(telWoorden(mijnZin));</code></pre>
+			<p class="text-info"><strong>Tip:</strong> Open de console in je browser om het aantal woorden te zien dat door de functie wordt berekend.</p>
+		</div>
+	</div>
+	
+	<!-- Extra informatie over split-methode en console.log -->
+	<div class="alert alert-warning mt-4" role="alert">
+		<h4 class="alert-heading">Hoe werkt deze oefening?</h4>
+		<p>Bij het uitvoeren van dit script splitst de functie <code>telWoorden</code> de zin op door te zoeken naar spaties. Het aantal verkregen delen is het aantal woorden in de zin, en dit wordt teruggegeven in de console.</p>
+		<hr>
+		<p class="mb-0">Druk op <kbd>F12</kbd> of gebruik <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac) om de console te openen en de uitkomst te zien.</p>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
