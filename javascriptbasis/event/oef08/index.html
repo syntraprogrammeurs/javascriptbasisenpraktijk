@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Knop Klik Tellen</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<!-- Hoofdtitel -->
+<div class="container text-center my-5">
+	<h1>Knop Klik Tellen</h1>
+	<!-- Terug naar home knop -->
+	<a href="../../index.html" class="btn btn-outline-primary my-3">Terug naar Home</a>
+	
+	<!-- Voorbeeldcode en uitleg -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Aantal Klikken bijhouden
+		</div>
+		<div class="card-body">
+			<h5>Voorbeeldcode</h5>
+			<pre><code class="d-block text-start">// JavaScript voor klikken tellen
+let klikAantal = 0; // Start met 0 klikken
+
+// Event listener voor de knop
+document.getElementById("klikKnop").addEventListener("click", function() {
+    klikAantal++; // Verhoog het aantal klikken
+    console.log("Knop geklikt: " + klikAantal + " keer"); // Log het aantal klikken
+    document.getElementById("output").textContent = "Knop geklikt: " + klikAantal + " keer";
+});
+			</code></pre>
+			<!-- Run knop -->
+			<button id="klikKnop" class="btn btn-primary mb-3 text-start">Klik mij!</button>
+			<!-- Output vak -->
+			<div id="output" class="p-3 bg-light border rounded">Klik op de knop om het aantal te zien.</div>
+		</div>
+	</div>
+</div>
+
+<!-- Uitleg over de oefening -->
+<div class="container mb-5">
+	<div class="alert alert-info">
+		<h4 class="alert-heading">Uitleg</h4>
+		<p>In deze oefening leer je hoe je een <code>click</code> event gebruikt om bij te houden hoe vaak er op een knop wordt geklikt.</p>
+		<ul>
+			<li><strong>Doel:</strong> Het aantal klikken bijhouden en tonen in de console en op de pagina.</li>
+			<li><strong>Functie:</strong> Telkens wanneer je op de knop "Klik mij!" klikt, wordt het aantal klikken bijgehouden en bijgewerkt in de console en in de outputbox.</li>
+			<li><strong>Run-knop:</strong> Klik op de knop om het aantal klikken direct te verhogen en te tonen.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

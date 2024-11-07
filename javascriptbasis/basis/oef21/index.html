@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Functie Oefening: Tel Woorden</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<div class="container mt-5">
+	<!-- Titel en terug naar home knop -->
+	<h1 class="text-center mb-4">JavaScript Functie Oefening: Tel Woorden</h1>
+	<div class="text-center my-5">
+		<a href="../../index.html" class="btn btn-outline-primary btn-lg">
+			<i class="bi bi-house-door"></i> Terug naar Home
+		</a>
+	</div>
+	
+	<!-- Voorbeeldcode en uitleg -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Tel Woorden
+		</div>
+		<div class="card-body">
+			<h5>Voorbeeldcode</h5>
+			<pre><code>
+// Functie om het aantal woorden in een zin te tellen
+function telWoorden(zin) {
+    return zin.split(" ").length; // Split de zin op spaties en tel het aantal woorden
+}
+
+// Test de functie
+console.log(telWoorden("Dit is een voorbeeldzin."));  // Verwachte Output: 4
+            </code></pre>
+			
+			<!-- Run knop en output sectie -->
+			<button id="runButton" class="btn btn-primary mb-3 text-start">Run</button>
+			<div id="output" class="border p-3 rounded bg-light" style="min-height: 50px;"></div>
+		</div>
+	</div>
+	
+	<!-- Uitleg sectie -->
+	<div class="alert alert-secondary mt-4" role="alert">
+		<h4 class="alert-heading">Hoe werkt deze oefening?</h4>
+		<p>In deze oefening maak je een functie <code>telWoorden</code> die het aantal woorden in een zin telt door deze te splitsen op spaties.
+			Klik op de <strong>Run</strong> knop om het resultaat voor de voorbeeldzin te zien.</p>
+		<hr>
+		<p>Druk op <kbd>F12</kbd> of gebruik <kbd>Ctrl + Shift + J</kbd> (Windows) of <kbd>Cmd + Option + J</kbd> (Mac) om de console te openen.</p>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

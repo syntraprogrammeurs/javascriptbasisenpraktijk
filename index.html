@@ -1,340 +1,126 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Welkom bij JaBaPa</title>
+	<title>Modules Overview</title>
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Bootstrap Icons -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
 	<style>
-		/* Logo kleuren */
-		.logo-j { color: #007bff; font-family: 'Montserrat', sans-serif; } /* Blauw voor "Ja" */
-		.logo-b { color: #28a745; font-family: 'Montserrat', sans-serif; } /* Groen voor "Ba" */
-		.logo-p { color: #dc3545; font-family: 'Montserrat', sans-serif; } /* Rood voor "Pa" */
-		
-		/* Algemene stijl voor de tekst */
-		body { font-family: 'Roboto', sans-serif; }
-		h1, h2 { font-family: 'Montserrat', sans-serif; }
-		
-		/* Stijl voor secties */
-		.section-wrapper {
-			padding: 4rem 1.5rem;
-			background: #f9f9f9;
-			border-radius: 12px;
-			margin-bottom: 3rem;
-			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		/* General styling */
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f3f3f3;
 		}
 		
-		/* Card hover-effect */
+		/* Card styling */
 		.card {
-			transition: transform 0.3s ease, box-shadow 0.3s ease;
-			border-radius: 8px;
+			overflow: hidden;
+			transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.4s;
+			cursor: none;
+			position: relative;
+			border: none;
+			transform: translateY(0);
 		}
+		
+		/* Card bounce effect on hover */
 		.card:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+			transform: scale(1.08) rotate(1deg);
+			box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 		}
-		/* Smooth scroll behavior for whole page */
-		html {
-			scroll-behavior: smooth;
+		
+		/* Circle with "View" text */
+		.hover-circle {
+			position: absolute;
+			width: 80px;
+			height: 80px;
+			background-color: rgba(0, 0, 0, 0.75);
+			color: #fff;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 1rem;
+			pointer-events: none;
+			transform: translate(-50%, -50%) scale(0.8);
+			transition: transform 0.4s ease, opacity 0.3s;
+			opacity: 0;
+			animation: pulse 1.5s infinite;
 		}
-		/* Position the scroll-to-top button */
-		#scrollToTopBtn {
-			position: fixed;
-			bottom: 20px;
-			right: 20px;
-			display: none; /* Start hidden */
-			z-index: 1000;
+		
+		/* Show and expand circle on hover */
+		.card:hover .hover-circle {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1.2);
+		}
+		
+		/* Pulsing effect */
+		@keyframes pulse {
+			0%, 100% {
+				transform: translate(-50%, -50%) scale(1);
+			}
+			50% {
+				transform: translate(-50%, -50%) scale(1.1);
+			}
+		}
+		
+		/* Remove link underline and set full height */
+		.card-link {
+			text-decoration: none;
+			color: inherit;
+			height: 100%;
+			display: block;
 		}
 	</style>
 </head>
-<body>
 
-<!-- Navigatiebalk -->
-<!-- Navigatiebalk -->
-<nav id="topNav" class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
-	<div class="container">
-		<a class="navbar-brand fw-bold" href="#">
-			<span class="logo-j">Ja</span><span class="logo-b">Ba</span><span class="logo-p">Pa</span>
-		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav ms-auto">
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-bs-toggle="dropdown" aria-expanded="false">BASIS</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
-						<li><a class="dropdown-item" href="./basis/oef01/index.html">Lengte en Unicode Waarde Berekenen</a></li>
-						<li><a class="dropdown-item" href="./basis/oef02/index.html">Vermenigvuldig Twee Getallen</a></li>
-						<li><a class="dropdown-item" href="./basis/oef03/index.html">Controleer even of oneven</a></li>
-						<li><a class="dropdown-item" href="./basis/oef04/index.html">Begroet Gebruikers met hun Naam</a></li>
-						<li><a class="dropdown-item" href="./basis/oef05/index.html">Hoogste getal</a></li>
-						<li><a class="dropdown-item" href="./basis/oef06/index.html">Tel het Aantal Woorden</a></li>
-						<li><a class="dropdown-item" href="./basis/oef07/index.html">Vermenigvuldig en Controleer</a></li>
-						<li><a class="dropdown-item" href="./basis/oef08/index.html">Aantal Dagen Berekenen</a></li>
-						<li><a class="dropdown-item" href="./basis/oef09/index.html">Array Methodes in JavaScript</a></li>
-						<li><a class="dropdown-item" href="./basis/oef10/index.html">Namen Sorteren</a></li>
-					</ul>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">EVENTS</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
-						<li><a class="dropdown-item" href="./events/oef01/index.html">Gebruikersinteractie</a></li>
-						<!-- Voeg hier de overige kaarten voor de sectie EVENTS toe zoals hierboven -->
-					</ul>
-				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-bs-toggle="dropdown" aria-expanded="false">DOM</a>
-					<ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-						<li><a class="dropdown-item" href="./DOM/DOM1/index.html">Element Selectie en Interactie</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOM2/index.html">Wijziging van Elementen</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOM3/index.html">Stijl Veranderingen met JavaScript</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOM4/index.html">Toevoegen en Verwijderen van Elementen</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOMOEF/dragendrop/index.html">Interactie via Drag-and-Drop</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOMOEF/listbox/index.html">Overdragen Functionaliteit tussen Listboxen</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOMOEF/oef01/index.html">Willekeurige Achtergrondkleur</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOMOEF/oef02/index.html">Achtergrondkleur aanpassen met willekeurige kleuren</a></li>
-						<li><a class="dropdown-item" href="./DOM/DOMOEF/todo1/index.html">Todo</a></li>
-					</ul>
-				</li>
-			</ul>
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-light">
+<div class="container text-center">
+	<h1 class="mb-4">Modules Overview</h1>
+	<div class="row justify-content-center g-4">
+		<!-- JavaScript Card -->
+		<div class="col-md-4">
+			<a href="./javascriptbasis/index.html" class="card-link">
+				<div class="card position-relative p-3">
+					<img src="javascript.png" class="card-img-top" alt="JavaScript Logo">
+					<div class="card-body">
+						<h5 class="card-title">JavaScript</h5>
+					</div>
+					<div class="hover-circle">View</div>
+				</div>
+			</a>
+		</div>
+		
+		<!-- Bootstrap Card -->
+		<div class="col-md-4">
+			<a href="./bootstrap/index.html" class="card-link">
+				<div class="card position-relative p-3">
+					<img src="bootstrap.png" class="card-img-top" alt="Bootstrap Logo">
+					<div class="card-body">
+						<h5 class="card-title">Bootstrap</h5>
+					</div>
+					<div class="hover-circle">View</div>
+				</div>
+			</a>
 		</div>
 	</div>
-</nav>
-
-<!-- Hoofdtitel -->
-<header class="container text-center my-5">
-	<h1>Welkom bij JaBaPa - Ontdek BASIS, EVENTS en DOM</h1>
-</header>
-
-<!-- Sections -->
-<div class="container">
-	<!-- Section 1: Basis -->
-	<section id="basis" class="section-wrapper">
-		<h2 class="text-center mb-4">Basis</h2>
-		<div class="row row-cols-1 row-cols-md-4 g-4">
-			<!-- 8 Cards for Basis Section -->
-			<div class="col">
-				<a href="./basis/oef01/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Lengte en Unicode Waarde Berekenen</h5>
-						<p class="card-text">Ontdek hoe je met JavaScript de lengte van een woord berekent en de Unicode-waarde van een specifiek karakter opvraagt.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef02/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 2">
-					<div class="card-body">
-						<h5 class="card-title">Vermenigvuldig Twee Getallen</h5>
-						<p class="card-text">Voer twee getallen in en ontdek hoe je een JavaScript-functie gebruikt om het product te berekenen en weer te geven.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef03/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 3">
-					<div class="card-body">
-						<h5 class="card-title">Controleer even of oneven</h5>
-						<p class="card-text">Voer een getal in en controleer of het even is met behulp van een JavaScript-functie die true of false teruggeeft.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef04/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 4">
-					<div class="card-body">
-						<h5 class="card-title">Begroet Gebruikers met hun Naam</h5>
-						<p class="card-text">Voer je naam in en ontvang een gepersonaliseerde begroeting met JavaScript.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef05/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 5">
-					<div class="card-body">
-						<h5 class="card-title">Hoogste getal</h5>
-						<p class="card-text">Voer drie getallen in en ontdek het grootste getal met behulp van de Math.max() functie in JavaScript.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef06/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 6">
-					<div class="card-body">
-						<h5 class="card-title">Tel het Aantal Woorden</h5>
-						<p class="card-text">Ontdek hoe je in JavaScript het aantal woorden in een zin kunt tellen met behulp van de split-methode</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef07/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 7">
-					<div class="card-body">
-						<h5 class="card-title">Vermenigvuldig en Controleer</h5>
-						<p class="card-text">Voer twee getallen in, vermenigvuldig ze en ontdek of het resultaat groter is dan 100 met behulp van een JavaScript-functie die true of false retourneert</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef08/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 8">
-					<div class="card-body">
-						<h5 class="card-title">Aantal Dagen Berekenen</h5>
-						<p class="card-text">Ontdek hoe je met JavaScript het aantal dagen tussen twee datums kunt berekenen met behulp van datumfuncties</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef09/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 8">
-					<div class="card-body">
-						<h5 class="card-title">Array Methodes in JavaScript</h5>
-						<p class="card-text">Leer hoe je array-methoden zoals push, pop, shift, unshift, map, filter, find, slice, splice, en reduce kunt gebruiken voor efficiënte array-manipulatie</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./basis/oef10/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Basis Image 8">
-					<div class="card-body">
-						<h5 class="card-title">Namen Sorteren</h5>
-						<p class="card-text">Voer een aantal namen in, sla ze op in een array en sorteer de namen alfabetisch en in omgekeerde volgorde met JavaScript.</p>
-					</div>
-				</a>
-			</div>
-		</div>
-	</section>
-	
-	<!-- Section 2: Events -->
-	<section id="events" class="section-wrapper">
-		<h2 class="text-center mb-4">Events</h2>
-		<div class="row row-cols-1 row-cols-md-4 g-4">
-			<!-- 8 Cards for Events Section -->
-			<div class="col">
-				<a href="./events/oef01/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="Events Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Gebruikersinteractie</h5>
-						<p class="card-text">Ontdek hoe je JavaScript kunt gebruiken om reacties te triggeren bij het klikken op knoppen, het indienen van formulieren en het indrukken van toetsen.</p>
-					</div>
-				</a>
-			</div>
-			<!-- Voeg hier de overige kaarten voor de sectie EVENTS toe zoals hierboven -->
-		</div>
-	</section>
-	
-	<!-- Section 3: DOM -->
-	<section id="dom" class="section-wrapper">
-		<h2 class="text-center mb-4">DOM</h2>
-		<div class="row row-cols-1 row-cols-md-4 g-4">
-			<!-- 8 Cards for DOM Section -->
-			<div class="col">
-				<a href="./DOM/DOM1/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Element Selectie en Interactie</h5>
-						<p class="card-text">Deze pagina demonstreert hoe je elementen op een pagina selecteert met JavaScript en de inhoud ervan toont in de console.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOM2/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Wijziging van Elementen</h5>
-						<p class="card-text">Deze pagina toont hoe je de inhoud en attributen van HTML-elementen kunt aanpassen met JavaScript.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOM3/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Stijl Veranderingen met JavaScript</h5>
-						<p class="card-text">Deze pagina toont hoe je inline stijlen kunt toepassen op een HTML-element met JavaScript, zoals kleur en achtergrondkleur.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOM4/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Toevoegen en Verwijderen van Elementen</h5>
-						<p class="card-text">Deze pagina demonstreert hoe je nieuwe elementen kunt toevoegen en bestaande elementen kunt verwijderen met JavaScript.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOMOEF/dragendrop/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Interactie via Drag-and-Drop
-						</h5>
-						<p class="card-text">Deze pagina toont hoe je items kunt slepen tussen twee listboxen met JavaScript.
-						
-						</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOMOEF/listbox/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Overdragen Functionaliteit tussen Listboxen</h5>
-						<p class="card-text">Deze pagina demonstreert hoe je items kunt overdragen tussen twee listboxen met JavaScript met buttons.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOMOEF/oef01/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Willekeurige Achtergrondkleur</h5>
-						<p class="card-text">Deze pagina demonstreert hoe je met één klik op een knop de achtergrondkleur kunt veranderen naar een willekeurige kleur met doorzichtigheid.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOMOEF/oef02/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Achtergrondkleur aanpassen met willekeurige kleuren</h5>
-						<p class="card-text">Deze pagina demonstreert hoe je met één klik op een knop de achtergrondkleur kunt veranderen naar een willekeurige kleur uit een gedefinieerde lijst.</p>
-					</div>
-				</a>
-			</div>
-			<div class="col">
-				<a href="./DOM/DOMOEF/todo1/index.html" class="card h-100 text-decoration-none text-dark">
-					<img src="img.png" class="card-img-top" alt="DOM Image 1">
-					<div class="card-body">
-						<h5 class="card-title">Todo</h5>
-						<p class="card-text">Deze pagina laat zien hoe je interactie kunt toevoegen aan een dynamische lijst met JavaScript, waarbij je items kunt toevoegen, doorstrepen en verwijderen.</p>
-					</div>
-				</a>
-			</div>
-		</div>
-	</section>
 </div>
-<!-- Scroll-to-top knop -->
-<a href="#topNav" id="scrollToTopBtn" class="btn btn-primary btn-lg">
-	<i class="bi bi-arrow-up"></i>
-</a>
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-	// Eenvoudige JavaScript voor het tonen/verbergen van de knop
-	const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-	
-	window.addEventListener("scroll", () => {
-		scrollToTopBtn.style.display = window.scrollY > 200 ? "block" : "none";
+	// JavaScript to track mouse position for each card
+	document.querySelectorAll('.card').forEach(card => {
+		const circle = card.querySelector('.hover-circle');
+		
+		card.addEventListener('mousemove', (e) => {
+			const rect = card.getBoundingClientRect();
+			circle.style.left = `${e.clientX - rect.left}px`;
+			circle.style.top = `${e.clientY - rect.top}px`;
+		});
 	});
 </script>
 </body>
+
 </html>

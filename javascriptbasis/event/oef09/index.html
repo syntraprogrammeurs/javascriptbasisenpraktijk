@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inhoud van Invoerveld Tonen</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<!-- Hoofdtitel -->
+<div class="container text-center my-5">
+	<h1>Inhoud van Invoerveld Tonen tijdens Typen</h1>
+	<!-- Terug naar home knop -->
+	<a href="../../index.html" class="btn btn-outline-primary my-3">Terug naar Home</a>
+	
+	<!-- Voorbeeldcode en uitleg -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Inhoud van een invoerveld tonen tijdens typen
+		</div>
+		<div class="card-body">
+			<h5>Voorbeeldcode</h5>
+			<pre><code class="d-block text-start">// JavaScript voor het tonen van invoer tijdens typen
+document.getElementById("invoerVeld").addEventListener("input", function(event) {
+    // Haal de huidige waarde uit het invoerveld op
+    const huidigeInvoer = event.target.value;
+    console.log("Invoer: " + huidigeInvoer); // Log de huidige invoer
+    document.getElementById("output").textContent = "Invoer: " + huidigeInvoer; // Toon de invoer in het outputvak
+});
+			</code></pre>
+			<!-- Invoerveld en output -->
+			<div class="d-flex flex-column align-items-start">
+				<label for="invoerVeld" class="form-label">Typ iets:</label>
+				<input type="text" id="invoerVeld" class="form-control mb-3" placeholder="Typ hier...">
+				<div id="output" class="p-3 bg-light border rounded">Invoer verschijnt hier...</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Uitleg over de oefening -->
+<div class="container mb-5">
+	<div class="alert alert-info">
+		<h4 class="alert-heading">Uitleg</h4>
+		<p>In deze oefening leer je hoe je een <code>input</code> event gebruikt om de invoer van een gebruiker realtime te tonen.</p>
+		<ul>
+			<li><strong>Doel:</strong> Het invoerveld bijhouden en tonen in de console en op de pagina terwijl de gebruiker typt.</li>
+			<li><strong>Functie:</strong> Bij elke invoer toont de console en het outputvak de huidige tekst.</li>
+			<li><strong>Interactie:</strong> Typ in het veld om te zien hoe de tekst realtime wordt weergegeven.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
