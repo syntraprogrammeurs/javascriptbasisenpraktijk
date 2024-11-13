@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tijdstip in Koptekst</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<!-- Hoofdtitel -->
+<div class="container text-center my-5">
+	<h1>Huidige Tijdstip in Koptekst met JavaScript</h1>
+	<!-- Terug naar home knop -->
+	<a href="../../../index.html" class="btn btn-outline-primary my-3">Terug naar Home</a>
+	
+	<!-- Voorbeeldcode en uitleg -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Huidige tijd weergeven en elke seconde bijwerken
+		</div>
+		<div class="card-body">
+			<h5>Voorbeeldcode</h5>
+			<pre><code class="d-block text-start">// JavaScript voor het weergeven en bijwerken van de huidige tijd
+function updateTijd() {
+    const nu = new Date();
+    const tijdString = nu.toLocaleTimeString();
+    document.getElementById("tijdKoptekst").textContent = "Huidige tijd: " + tijdString;
+}
+
+setInterval(updateTijd, 1000); // Bijwerken elke seconde
+			</code></pre>
+			<!-- Koptekst voor tijdweergave -->
+			<div class="d-flex flex-column align-items-start">
+				<h2 id="tijdKoptekst" class="p-3 bg-light border rounded">Huidige tijd: </h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Uitleg over de oefening -->
+<div class="container mb-5">
+	<div class="alert alert-info">
+		<h4 class="alert-heading">Uitleg</h4>
+		<p>In deze oefening leer je hoe je met JavaScript de huidige tijd in een koptekst kunt weergeven en deze elke seconde bijwerkt.</p>
+		<ul>
+			<li><strong>Doel:</strong> Het huidige tijdstip tonen en automatisch bijwerken.</li>
+			<li><strong>Functie:</strong> Een JavaScript-functie die elke seconde het tijdstip in de koptekst bijwerkt.</li>
+			<li><strong>Interactie:</strong> De koptekst toont de actuele tijd en wordt continu bijgewerkt.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

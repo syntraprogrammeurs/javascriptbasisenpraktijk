@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Kleur van Tekst Veranderen bij Hover</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<!-- Hoofdtitel -->
+<div class="container text-center my-5">
+	<h1>Kleur van Tekst Veranderen bij Hover met JavaScript</h1>
+	<!-- Terug naar home knop -->
+	<a href="../../../index.html" class="btn btn-outline-primary my-3">Terug naar Home</a>
+	
+	<!-- Voorbeeldcode en uitleg -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Tekstkleur veranderen bij hover
+		</div>
+		<div class="card-body">
+			<h5>Voorbeeldcode</h5>
+			<pre><code class="d-block text-start">// JavaScript voor het veranderen van de tekstkleur bij hover
+const tekstElement = document.getElementById("hoverTekst");
+
+tekstElement.addEventListener("mouseenter", function() {
+    tekstElement.style.color = "blue";
+});
+
+tekstElement.addEventListener("mouseleave", function() {
+    tekstElement.style.color = "black";
+});
+			</code></pre>
+			<!-- Tekstelement -->
+			<div class="d-flex flex-column align-items-start">
+				<p id="hoverTekst" class="p-3 bg-light border rounded">Zweef met de muis over deze tekst om de kleur te veranderen.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Uitleg over de oefening -->
+<div class="container mb-5">
+	<div class="alert alert-info">
+		<h4 class="alert-heading">Uitleg</h4>
+		<p>In deze oefening leer je hoe je met JavaScript de kleur van een tekst kunt veranderen wanneer de gebruiker met de muis erover zweeft.</p>
+		<ul>
+			<li><strong>Doel:</strong> De tekstkleur veranderen naar blauw wanneer de gebruiker met de muis over de tekst zweeft.</li>
+			<li><strong>Functie:</strong> Een JavaScript-functie die de tekstkleur verandert bij hover en terugzet wanneer de muis weggaat.</li>
+			<li><strong>Interactie:</strong> Beweeg de muis over de tekst om de kleurverandering te zien.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

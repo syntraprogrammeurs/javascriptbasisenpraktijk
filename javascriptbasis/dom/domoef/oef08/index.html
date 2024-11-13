@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Toon Verborgen Paragraaf</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<!-- Hoofdtitel -->
+<div class="container text-center my-5">
+	<h1>Toon Verborgen Paragraaf met JavaScript</h1>
+	<!-- Terug naar home knop -->
+	<a href="../../../index.html" class="btn btn-outline-primary my-3">Terug naar Home</a>
+	
+	<!-- Voorbeeldcode en uitleg -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Verborgen paragraaf zichtbaar maken met een knop
+		</div>
+		<div class="card-body">
+			<h5>Voorbeeldcode</h5>
+			<pre><code class="d-block text-start">// JavaScript voor het tonen van een verborgen paragraaf
+document.getElementById("toonParagraafBtn").addEventListener("click", function() {
+    const paragraaf = document.getElementById("verborgenParagraaf");
+    paragraaf.style.display = "block";
+});
+			</code></pre>
+			<!-- Knop en verborgen paragraaf -->
+			<div class="d-flex flex-column align-items-start">
+				<button id="toonParagraafBtn" class="btn btn-primary mb-3">Toon Paragraaf</button>
+				<p id="verborgenParagraaf" class="p-3 bg-light border rounded" style="display: none;">Dit is een verborgen paragraaf die zichtbaar wordt na het klikken op de knop.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Uitleg over de oefening -->
+<div class="container mb-5">
+	<div class="alert alert-info">
+		<h4 class="alert-heading">Uitleg</h4>
+		<p>In deze oefening leer je hoe je met JavaScript een verborgen paragraaf zichtbaar kunt maken door op een knop te klikken.</p>
+		<ul>
+			<li><strong>Doel:</strong> Een verborgen paragraaf tonen wanneer de gebruiker op de knop klikt.</li>
+			<li><strong>Functie:</strong> Een JavaScript-functie die de stijl van de paragraaf aanpast om deze zichtbaar te maken.</li>
+			<li><strong>Interactie:</strong> Klik op de knop om de verborgen paragraaf te laten verschijnen.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

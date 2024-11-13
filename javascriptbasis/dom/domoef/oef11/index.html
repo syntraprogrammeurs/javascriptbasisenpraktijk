@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Willekeurig Citaat Weergeven</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="./index.js" defer></script>
+</head>
+<body>
+
+<!-- Hoofdtitel -->
+<div class="container text-center my-5">
+	<h1>Willekeurig Citaat Weergeven met JavaScript</h1>
+	<!-- Terug naar home knop -->
+	<a href="../../../index.html" class="btn btn-outline-primary my-3">Terug naar Home</a>
+	
+	<!-- Voorbeeldcode en uitleg -->
+	<div class="card mb-4">
+		<div class="card-header bg-primary text-white">
+			Oefening: Willekeurig citaat tonen bij elke klik
+		</div>
+		<div class="card-body">
+			<h5>Voorbeeldcode</h5>
+			<pre><code class="d-block text-start">// JavaScript voor het tonen van een willekeurig citaat
+const citaten = [
+    "Het leven is wat er gebeurt terwijl je andere plannen maakt.",
+    "De enige manier om geweldig werk te doen, is door te houden van wat je doet.",
+    "Succes is niet het sleutel tot geluk, geluk is de sleutel tot succes.",
+    "Wees de verandering die je in de wereld wilt zien."
+];
+
+document.getElementById("toonCitaatBtn").addEventListener("click", function() {
+    const willekeurigCitaat = citaten[Math.floor(Math.random() * citaten.length)];
+    document.getElementById("citaatDisplay").textContent = willekeurigCitaat;
+});
+			</code></pre>
+			<!-- Knop en citaatweergave -->
+			<div class="d-flex flex-column align-items-start">
+				<button id="toonCitaatBtn" class="btn btn-primary mb-3">Toon Willekeurig Citaat</button>
+				<p id="citaatDisplay" class="p-3 bg-light border rounded">Klik op de knop om een willekeurig citaat te tonen.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Uitleg over de oefening -->
+<div class="container mb-5">
+	<div class="alert alert-info">
+		<h4 class="alert-heading">Uitleg</h4>
+		<p>In deze oefening leer je hoe je met JavaScript een willekeurig citaat uit een array kunt tonen wanneer de gebruiker op een knop klikt.</p>
+		<ul>
+			<li><strong>Doel:</strong> Een willekeurig citaat uit een array tonen in een paragraaf bij elke klik op de knop.</li>
+			<li><strong>Functie:</strong> Een JavaScript-functie die een willekeurig citaat selecteert en weergeeft.</li>
+			<li><strong>Interactie:</strong> Klik op de knop om telkens een ander willekeurig citaat te zien.</li>
+		</ul>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
