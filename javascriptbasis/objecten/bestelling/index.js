@@ -1,13 +1,3 @@
-// Maak een bestellingenbeheer-app waarin gebruikers bestellingen kunnen toevoegen en sorteren op basis van status
-// (bijvoorbeeld: "In afwachting", "In behandeling", "Verzonden"). Gebruik tabs om tussen deze statuscategorieën te schakelen.
-// Bij het toevoegen van een nieuwe bestelling, verschijnt er een toastmelding met de details van de bestelling.
-//
-//     Benodigde Functionaliteiten:
-//
-//     Een klasse Bestelling met eigenschappen zoals id, productnaam, klant, en status.
-//     Tabs om bestellingen te categoriseren en weer te geven op basis van hun status.
-//     Een toastmelding wanneer een nieuwe bestelling wordt toegevoegd.
-
 // Definieer een klasse voor de Bestelling
 class Bestelling {
     constructor(id, productNaam, klantNaam, status) {
