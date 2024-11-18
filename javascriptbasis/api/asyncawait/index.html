@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gebruik van async / await</title>
+</head>
+<body>
+	<h1>Data ophalen met Async/await</h1>
+	<div id="output">De opgehaalde data verschijnt hieronder:</div>
+	
+	<script>
+		async function haalDataOp(){
+			try{
+				//gebruik de fetch om een http request (verzoek) te versturen naar de API
+				//waar de json code staat.
+				let response = await fetch("https://jsonplaceholder.typicode.com/posts/1");
+				//controleer of de response succesvol is
+				if (!response){
+					throw new Error(`HTTP FOUT, status:${response.status}`);
+				}
+				//converteer naar json formaat
+				let data = await response.json();
+				//toon de gegevens in de pagina.
+				document.getElementById("output").innerHTML=
+						`
+						<h2>Ophalen van API-DATA</h2>
+						<p><strong>ID:</strong>${data.id}</p>
+						<p><strong>TITLE:</strong>${data.title}</p>
+						<p><strong>BODY:</strong>${data.body}</p>
+						
+						`
+			}catch(error){
+				document.getElementById("output").textContent="Er is een fout opgetreden bij het ophalen van de gegevens.";
+			}
+		}
+		haalDataOp();
+	</script>
+</body>
+</html>

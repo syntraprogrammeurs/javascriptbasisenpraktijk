@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<title>Vlaggen</title>
+</head>
+<body>
+<h1 class="text-center py-5">Vlaggen</h1>
+<!--Selector: werelddeel-->
+<div class="container">
+	<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center mb-5">
+		<div>
+			<select id="slctRegion" class="form-select" aria-label="Default select example">
+				<option selected>Selecteer een werelddeel</option>
+				<option value="antarctic">Antarctic</option>
+				<option value="africa">Africa</option>
+				<option value="americas">Americas</option>
+				<option value="asia">Asia</option>
+				<option value="europe">Europe</option>
+				<option value="oceania">Oceania</option>
+			</select>
+		</div>
+	</div>
+</div>
+<!--Resultaten-->
+<div class="container">
+	<div id="flagList" class="row row-cols-2 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-4">
+	
+	</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+	function vlaggen(region) {
+		// flagList leegmaken
+		document.querySelector("#flagList").innerHTML = "";
+		
+		// API URL samenstellen
+		const apiUrl = `https://restcountries.com/v3.1/region/${region}`;
+		
+		// Data ophalen
+		axios.get(apiUrl)
+				.then(response => {
+					// Voor elk land vlag opvragen en toevoegen aan flagList
+					response.data.forEach(country => {
+						const flagURL = country.flags.png;
+						const name = country.name.official;
+						const languages = country.languages;
+						const capital = country.capital ? country.capital[0] : "Unknown";
+						const currencies = country.currencies ? Object.values(country.currencies).map(curr => curr.name).join(", ") : "Unknown";
+						const population = country.population;
+						const unMember = country.unMember;
+						
+						const languagesList = languages ? Object.values(languages).join(", ") : "Unknown";
+						
+						const flagList = document.querySelector("#flagList");
+						const flagListHTML = `
+                        <div class="col">
+                            <img src="${flagURL}" class="object-fit-cover img-thumbnail" alt="${name} flag" data-bs-toggle="modal" data-bs-target="#modal${country.cca3}">
+                        </div>
+                        <div class="modal fade" id="modal${country.cca3}" tabindex="-1" aria-labelledby="modal${country.cca3}Label" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="modal${country.cca3}Label">${name}</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body align-items-center justify-content-center">
+                                        <div class="d-flex justify-content-center align-items-center my-3">
+                                            <img src="${flagURL}" alt="${name} flag">
+                                        </div>
+                                        <ul class="list-group my-5 mx-3">
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>Languages: </div>
+                                                <div>${languagesList}</div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>Capital: </div>
+                                                <div>${capital}</div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>Currencies: </div>
+                                                <div>${currencies}</div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>Population: </div>
+                                                <div>${population} inhabitants</div>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between">
+                                                <div>UN Member: </div>
+                                                <div>${unMember}</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+						
+						flagList.innerHTML += flagListHTML;
+					});
+				});
+	}
+	
+	// Gekozen regio ophalen
+	const slctRegion = document.querySelector("#slctRegion");
+	
+	// Afhankelijk van gekozen regio de juiste parameter meegeven met functie
+	slctRegion.addEventListener("change", function () {
+		const selectedRegion = slctRegion.value;
+		
+		switch (selectedRegion) {
+			case "antarctic":
+				vlaggen("antarctic");
+				break;
+			case "africa":
+				vlaggen("africa");
+				break;
+			case "americas":
+				vlaggen("americas");
+				break;
+			case "asia":
+				vlaggen("asia");
+				break;
+			case "europe":
+				vlaggen("europe");
+				break;
+			case "oceania":
+				vlaggen("oceania");
+				break;
+		}
+	});
+</script>
+</body>
+</html>

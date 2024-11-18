@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Data ophalen met FETCH en Promises</title>
+</head>
+<body>
+	<h1>Data ophalen met FETCH en Promises</h1>
+	<p id="output">De opgehaalde data verschijnt hieronder:</p>
+	
+	<script>
+		//Gebruik de fetch functie om gegevens van een API op te halen.
+		fetch("https://pokeapi.co/api/v2/pokemon/")
+				.then(response =>{
+					//controleert of de response succesvol is //200 OK
+					//omzetten naar json formaat
+					return response.json();
+				})
+				.then(data => {
+					//toon de opgehaalde gegevens in de console
+					//voeg data toe aan de pagina.
+					//de eerste parameter = data die vanuit json naar string moet worden omgezet
+					//de tweede parameter = een replacer functie die bepaalt welke eigenschappen
+					//moeten worden opgenomen.
+					//de derde parameter = het aantal spaties die we gebruiken om onze tekst
+					//te laten inspringen.
+					const output = document.getElementById("output");
+					output.innerHTML += `<pre>${JSON.stringify(data.results[1].name,null,2)}</pre>`
+				})
+				.catch(error=>{
+					//toon een foutmelding wanneer iets verkeerd loopt.
+					console.error("Fout:",error);
+					//toon een foutmelding op de pagina
+					const outputElement = document.getElementById("output");
+					outputElement.textContent = "Er is een fout opgetreden bij het ophalen van de data.";
+				})
+	</script>
+</body>
+</html>

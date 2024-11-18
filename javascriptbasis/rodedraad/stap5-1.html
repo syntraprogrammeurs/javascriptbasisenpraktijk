@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<title>Winkelmand</title>
+</head>
+<body class="container">
+	<h1>Winkelmand</h1>
+	<div class="d-flex">
+		<input class="form-control me-1" type="text" id="product-name" placeholder="Voeg een product toe">
+		<input class="form-control me-1" type="number" id="product-quantity" placeholder="Aantal" min="1">
+		<input class="form-control me-1" type="number" id="product-price" placeholder="Prijs per stuk" min="0.01" step="0.01">
+		
+		<button class="btn btn-primary" id="add-product">Toevoegen</button>
+	</div>
+	
+	<ul class="list-group list-group-flush" id="product-list">
+		
+	</ul>
+	<h2 id="total-price">Totaal: € 0.00</h2>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.js"></script>
+	
+	<script>
+		//begin programma
+		//dit is een lege array
+		const cart = [];
+		
+		function calculateTotalPrice(){
+			let totalPrice=0;
+			cart.forEach(product =>{
+				totalPrice =totalPrice + parseInt(product.quantity) * parseFloat(product.price);
+				//totalPrice += + parseInt(product.quantity) * parseFloat(product.price);
+			})
+			return totalPrice.toFixed(2);
+		}
+		
+		function updateCartDisplay() {
+			const productList = document.getElementById('product-list');
+			productList.innerHTML = "";
+			cart.forEach((product, index) => { // Gebruik index als tweede parameter in forEach
+				const totalPrice = parseInt(product.quantity) * parseFloat(product.price);
+				const listItem = document.createElement('li');
+				listItem.classList.add("list-group-item");
+				listItem.innerText = `${product.name} -> ${product.quantity} * € ${product.price} = € ${totalPrice.toFixed(2)}`;
+				
+				// Verwijder knop
+				const deleteButton = document.createElement('button');
+				deleteButton.innerText = 'Verwijder';
+				deleteButton.classList.add("btn","btn-danger","ms-2");
+				listItem.appendChild(deleteButton);
+				
+				// Toevoegen van de verwijder functionaliteit
+				deleteButton.addEventListener('click', function () {
+					cart.splice(index, 1); // Verwijder het juiste product op basis van index
+					updateCartDisplay(); // Roep functie opnieuw aan om de lijst te vernieuwen
+					document.getElementById('total-price').textContent = `Totaal: € ${calculateTotalPrice()}`; // Update totaalprijs
+				});
+				
+				productList.appendChild(listItem);
+			});
+		}
+		
+		function clearInputFields(){
+			document.getElementById('product-name').value="";
+			document.getElementById('product-quantity').value="";
+			document.getElementById('product-price').value="";
+		}
+		//begin programma
+		
+		document.getElementById('add-product').addEventListener('click',function (){
+			//1productName, productQuantiy, productPrice
+			const productName = document.getElementById('product-name').value;
+			const productQuantity = document.getElementById('product-quantity').value;
+			const productPrice = document.getElementById('product-price').value;
+			
+			//2dit is een object variabele
+			const product = {
+				name : productName,
+				quantity : productQuantity,
+				price : productPrice
+			}
+			//3toevoegen van het object aan de cart
+			cart.push(product);
+			//4 array uitlezen en list item maken
+			updateCartDisplay();
+			
+			//totalprice in html bij werken.
+			document.getElementById('total-price').textContent= `Totaal: € ${calculateTotalPrice()}`
+			
+			//5 wissen van het invoerveld
+			clearInputFields();
+			
+		});
+	</script>
+</body>
+</html>

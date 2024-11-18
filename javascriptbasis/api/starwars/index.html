@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gebruik van async / await</title>
+</head>
+<body>
+
+<H1>Data ophalen met Async/await</H1>
+<div id="output">De opgehaalde date verschijn hieronder:</div>
+
+
+<script>
+	// async laad eerst voor te tonen, await moet daarbij
+	async function haalDataOp(){
+		try{
+			//gebruik de fetch om een http request (verzoek)te versturen naar de API
+			// waar de JSON code staat
+			
+			let response = await fetch("https://swapi.dev/api/films/");
+			// controlleer of de response succesvol is //200 OK
+			if (!response){
+				throw new Error(` HTTP FOUT, status${response.status}`);
+			}
+			// converteer naar json formaat
+			let data = await response.json();
+			console.log(data)
+			//toon de gegevens in de pagina
+			let outputHTML =
+					`
+                    <h2>Ophalen API data</h2>
+                    <ul>
+                    `;
+			data.results.forEach(film => {
+				outputHTML += `
+                        <li>
+                            <strong>Titel:</strong> ${film.title}
+                        </li>
+                    `
+			});
+			outputHTML += `
+                    </ul>
+                `;
+			// steek alles in output om het te zien op het scherm
+			document.getElementById("output").innerHTML = outputHTML;
+			
+		}catch(error){
+			document.getElementById("output").textContent ="Er is een fout opgetreden bij het ophalen van de gegevens."
+		}
+	}
+	haalDataOp();
+
+</script>
+
+</body>
+</html>

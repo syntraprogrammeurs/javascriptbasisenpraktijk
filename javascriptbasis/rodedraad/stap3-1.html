@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Winkelmand</title>
+</head>
+<body>
+	<h1>Winkelmand</h1>
+	<input type="text" id="product-name" placeholder="Voeg een product toe">
+	<input type="number" id="product-quantity" placeholder="Aantal" min="1">
+	<input type="number" id="product-price" placeholder="Prijs per stuk" min="0.01" step="0.01">
+	
+	<button id="add-product">Toevoegen</button>
+	<ul id="product-list">
+		
+	</ul>
+	<script>
+		//dit is een lege array
+		const cart = [];
+		
+		document.getElementById('add-product').addEventListener('click',function (){
+			//productName, productQuantiy, productPrice
+			const productName = document.getElementById('product-name').value;
+			const productQuantity = document.getElementById('product-quantity').value;
+			const productPrice = document.getElementById('product-price').value;
+			//totalPrice
+			const totalPrice = parseInt(productQuantity) * parseFloat(productPrice);
+			
+			//1 li item maken
+			const listItem = document.createElement('li');
+			//2 <li>productName -> hoeveelheid * aantal = €totaalprijs</li>
+			listItem.innerText = `${productName} -> ${productQuantity} * € ${productPrice} = € ${totalPrice.toFixed(2)}`;
+			//3 voeg dit volledige listItem toe aan uw product-list
+			document.getElementById('product-list').appendChild(listItem);
+			//4 wissen van het invoerveld
+			document.getElementById('product-name').value="";
+			document.getElementById('product-quantity').value="";
+			document.getElementById('product-price').value="";
+			
+			//dit is een object variabele
+			const product = {
+				name : productName,
+				quantity : productQuantity,
+				price : productPrice
+			}
+			//toevoegen van het object aan de cart
+			cart.push(product);
+			
+			
+			
+		});
+	</script>
+</body>
+</html>
