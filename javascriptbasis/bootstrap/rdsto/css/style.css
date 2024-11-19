@@ -1,0 +1,74 @@
+/*vanaf hier MOBILE FIRST*/
+/* fonts */
+.josefin-sans{
+    font-family:"Josefin Sans", sans-serif;
+    font-weight:700;
+    font-size:30px;
+}
+.heebo{
+    font-family: "Heebo", sans-serif;
+    font-size:16px;
+}
+/* navbar */
+.navbar{
+    /*witte achtergrond met transparantie*/
+    background: rgba(255,255,255,0);
+    position:fixed;/*navbar blijft bovenaan*/
+    top:0;
+    width:100%;
+    z-index:5;
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.3);
+}
+
+/*navbar scrolled*/
+.scrolled{
+    background:#FFA07A;
+    backdrop-filter:none;
+}
+/* Verberg het standaard pijltje van Bootstrap dropdowns */
+.dropdown-toggle::after {
+    content: none; /* Verwijdert het standaard pijltje */
+}
+/*hamburger menu styling*/
+.navbar-toggler{
+    border:0px;
+}
+.navbar-toggler:focus{
+    outline:none;
+    box-shadow:none;
+}
+
+/*Try for free*/
+.btn-custom{
+    border:1px solid transparent;
+    padding:10px 20px;
+    transition:background-color 1s ease, border-color 1s ease;
+}
+.btn-custom:hover{
+    background-color:transparent !important;
+    color:white;
+    border-color:white;
+}
+
+/*hero section*/
+#hero-section{
+    padding-top:70px;
+    background-image:url('../images/banner-bg.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:center center;
+    min-height:100vh;
+   position:relative;
+}
+/*MEDIA QUERIES*/
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    .navbar{
+        border-bottom:none;
+        backdrop-filter: blur(0px);
+    }
+    .josefin-sans{
+        font-size:75px;
+    }
+}
